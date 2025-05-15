@@ -12,7 +12,7 @@
 
 ## Procedimiento de despliegue
 
-1. Realizar la descarga del sistema con git
+1. Realizar la descarga del sistema con git, ejecutando el siguiente comando:
 
 ```bash
   git clone https://github.com/hilcer/prueba-nizum.git
