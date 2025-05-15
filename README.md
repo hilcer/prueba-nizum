@@ -4,11 +4,11 @@
 
 - Este proyecto se contruyo con la version de Spring Boot 2.7.6 y Java 8 U441
 - Como gestor de librerias se uso maven.
-- Como base de datos en memoria usa H2
-- En caso de levantar en 
+- Como base de datos en memoria usa H2 o puede usar una base de datos MySql
 
 ## Diagrama del proyecto
 
+![Demo System Schematic](https://github.com/hilcer/prueba-nizum/blob/main/images/diagrama.jpg)
 
 ## Procedimiento de despliegue
 
