@@ -1,9 +1,11 @@
 package com.nizum.prueba.exceptions;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.http.HttpStatus;
 
-@Data
+@Getter
+@Setter
 public class EmailExistException extends RuntimeException {
 
     private String description;
