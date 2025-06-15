@@ -21,7 +21,7 @@
 2. Dirigirse dentro del directorio (carpeta) api-user/ y ejecute la siguiente linea de comando para construir el proyecto 
 
 ```bash
-  nvm clean package
+  mvn clean package
 ```
 3. El paso previo creara el archivo: `target/demo-0.0.1-SNAPSHOT.jar`, para iniciar el servicio ejecute el siguiente comando:
 
