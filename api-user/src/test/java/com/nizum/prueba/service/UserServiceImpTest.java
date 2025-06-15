@@ -118,9 +118,14 @@ class UserServiceImpTest {
     void createUser_WithRepetEmail() {
 
         String email = "test@test.com";
-        Mockito.when(userRepository.save(Mockito.any(User.class))).thenReturn(expectedUserEntity);
         Mockito.when(userRepository.findByEmail(email)).thenReturn(Optional.of(expectedUserEntity));
-        Assertions.assertThrows(EmailExistException.class , ()-> userService.createUser(userInDtoSimulated));
+        Assertions.assertThrows(EmailExistException.class, () -> {
+            try {
+                userService.createUser(userInDtoSimulated);
+            } catch (EmailExistException e) {
+                throw e;
+            }
+        });
     }
 
 }

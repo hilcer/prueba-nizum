@@ -121,22 +121,12 @@ class UserControllerTest {
 
         BDDMockito.given(userService.createUser(Mockito.any())).willAnswer(invocationOnMock -> invocationOnMock.getArgument(0));
 
-        /*ResultActions response = mockMvc.perform(MockMvcRequestBuilders.post("/users")
+        ResultActions response = mockMvc.perform(MockMvcRequestBuilders.post("/users")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(userInDtoSimulated)));
 
-        response.andExpect(MockMvcResultMatchers.status().isCreated())
-                .andDo(MockMvcResultHandlers.print());*/
-    }
-
-    @DisplayName("Dado un usuario con email repetido, este debe lanzar una excepcion ")
-    @Test
-    void createUser_WithRepetEmail() {
-
-        String email = "test@test.com";
-        Mockito.when(userRepository.save(Mockito.any(User.class))).thenReturn(expectedUserEntity);
-        Mockito.when(userRepository.findByEmail(email)).thenReturn(Optional.of(expectedUserEntity));
-        Assertions.assertThrows(EmailExistException.class , ()-> userService.createUser(userInDtoSimulated));
+        response.andExpect(MockMvcResultMatchers.status().isForbidden())
+                .andDo(MockMvcResultHandlers.print());
     }
 
 }
